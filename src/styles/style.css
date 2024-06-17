@@ -8,6 +8,8 @@ html, body {
     background-color: #eee;
     font-family: "Poppins", sans-serif;
     color: #111;
+    height: 100%;
+    overflow-x: hidden; 
 }
 
 img {
@@ -20,6 +22,7 @@ img {
     grid-template-columns: 1fr 2fr;
     align-items: center;
     justify-self: center;
+    min-height: 100vh; 
 }
 
 .data-info {
@@ -48,6 +51,7 @@ img {
     background-color: #e2381a;
     padding: 40px;
     border-radius: 0 50px 50px 0;
+    text-align: center;
 }
 
 .data-sort h2 {
@@ -65,7 +69,8 @@ img {
 }
 
 .data-sort input {
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     margin-top: 40px;
     padding: 12px 24px;
     border: 2px solid transparent;
@@ -110,8 +115,8 @@ button:hover {
     top: 0;
     z-index: 1000;
     justify-content: center;
-    display: none;
     align-items: center;
+    display: none;
 }
 
 .modal {
@@ -125,6 +130,9 @@ button:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
 }
 
 .ativo .modal {
@@ -189,6 +197,47 @@ button:hover {
     }
 
     .data-sort {
-        border-radius: 0px;
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .data-sort input {
+        font-size: 1rem;
+    }
+
+    .data-sort h2 {
+        font-size: 1.5rem;
+    }
+
+    .data-sort p {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 1.2rem;
+    }
+
+    .modal {
+        padding: 20px;
+    }
+
+    .modal p, .modal .numSort {
+        font-size: 1.5rem;
+    }
+
+    .modal .close {
+        font-size: 2rem;
+    }
+}
+
+@media (max-height: 500px) {
+    .modal-container {
+        align-items: flex-start;
+        padding-top: 20px; 
+    }
+
+    .modal {
+        margin: 0 20px; 
     }
 }
