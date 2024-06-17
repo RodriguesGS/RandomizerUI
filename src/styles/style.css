@@ -6,7 +6,6 @@
 
 html, body {
     background-color: #eee;
-    height: 100%;
     font-family: "Poppins", sans-serif;
     color: #111;
 }
@@ -177,5 +176,19 @@ button:hover {
     100% {
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+@media (max-width: 1000px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .data-info {
+        grid-row: 1;
+    }
+
+    .data-sort {
+        border-radius: 0px;
     }
 }
