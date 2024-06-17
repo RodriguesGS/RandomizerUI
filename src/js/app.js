@@ -10,7 +10,7 @@ closeModalBtn.addEventListener("click", closeModal);
 
 function sort() {
     let inputValue = parseInt(numInput.value)
-    let numSort = Math.floor(Math.random() * (inputValue + 1))
+    let numSort = Math.floor(Math.random() * (inputValue + 1));
 
     spanNum.classList.remove("show");
     spanNum.offsetWidth;
@@ -27,5 +27,6 @@ function closeModal(e) {
     if (e.target === modal || e.target.classList.contains("close")) {
         modal.classList.remove("ativo");
         modal.style.display = "none";
+        numInput.value = "";
     }
 }
